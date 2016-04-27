@@ -1,0 +1,23 @@
+# html snippets #
+
+# ------------ html  ------------ #
+snippet textfield
+	<div>
+		<label for="${1}">${1}</label>
+		<input type="text" name=${1}"" id="${1}"  value="{{ old('title') }}">
+	</div>
+
+snippet textarea
+	<div class="form-group">
+		<label for="body">body</label>
+		<textarea name="body" id="body" rows="9" class="form-control">{{ old('body') }}</textarea>
+	</div>
+
+snippet submit
+	<div>
+		<input type="submit" value="${1}" class="btn btn-primary">
+	</div>
+
+
+# ---------- bootstrap --------- #
+

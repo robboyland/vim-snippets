@@ -1,0 +1,59 @@
+# laravel.snippets
+
+# ------------ routes ------------ #
+
+snippet rg
+	Route::get('${1}', '${2}');
+
+snippet rp
+	Route::post('${1}', '${2}');
+
+snippet rr
+	Route::resource('${1}', '${2}');
+
+
+# --------- controllers --------- #
+
+snippet rv
+	return view('${1}'${2});
+
+snippet val
+	$validator = Validator::make($request->all(), [
+		'${1}'	=> 'required',
+	]);
+
+	if ($validator->fails()) {
+		return redirect('/${2}/create')
+			->withErrors($validator)
+			->withInput();
+	}
+
+
+# ----------- tests ----------- #
+
+snippet fac
+	$${1} = factory(${2}::class)->create();
+
+snippet mfac
+	$factory->define(App\${1}::class, function (Faker\Generator $faker) {
+		return [
+			'${2}' => $faker->${3}(),
+		];
+	});
+
+snippet tmeth
+	/** @test */
+	public function ${1}()
+	{
+		${2}
+	}
+
+snippet sid
+	->seeIndatabase('${1}', ['${2}' => '${3}'])
+
+# ----------- misc ----------- #
+
+# mamp socket: quick and dirty prototyping
+snippet mamp
+	'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
+
